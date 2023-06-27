@@ -12,42 +12,18 @@
 </head>
 <body>
     <header>CONCENTRATION</header>
-    <section id="board">
-        <div id="c0r3"></div>
-        <div id="c1r3"></div>
-        <div id="c2r3"></div>
-        <div id="c3r3"></div>
-        <div id="c4r3"></div>
-        <div id="c5r3"></div>
-      
-
-        <div id="c0r2"></div>
-        <div id="c1r2"></div>
-        <div id="c2r2"></div>
-        <div id="c3r2"></div>
-        <div id="c4r2"></div>
-        <div id="c5r2"></div>
-     
-
-        <div id="c0r1"></div>
-        <div id="c1r1"></div>
-        <div id="c2r1"></div>
-        <div id="c3r1"></div>
-        <div id="c4r1"></div>
-        <div id="c5r1"></div>
-       
-
-        <div id="c0r0"></div>
-        <div id="c1r0"></div>
-        <div id="c2r0"></div>
-        <div id="c3r0"></div>
-        <div id="c4r0"></div>
-        <div id="c5r0"></div>
-      
-    </section>
-    <button>Play Again</button>
-    <button>Turns</button>
-    <button>Volume</button>
+    <div class="wrapper">
+        <div class="stats-container">
+            <div id="moves-count"></div>
+            <div id="time"></div>
+        </div>
+        <div class="game-container"></div>
+        <button id="stop" class="hide">Stop Game</button>
+    </div>
+    <div class="controls-container">
+       <p id="result"></p>
+       <button id="start">Start Game</button>
+    </div>
     <footer>Created by: Rahul Raikhy</footer>
 </body>
 </html>
