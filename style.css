@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-size: 4vmin;
+    color: lightblue;
+    letter-spacing: 0.5vmin;
+}
+
+footer {
+    font-size: 2vmin;
+    color: orchid;
+    letter-spacing: 1vmin;
+    margin-top: 5vmin;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(6, 5vmin);
+    grid-template-rows: repeat(4, 5vmin);
+    gap: 1vmin;
+    margin-top: 4vmin;
+}
+
+#board > div {
+    height: 5vmin;
+    border: 0.1vmin solid grey;
+}
+
+button {
+    margin-top: 4vmin;
+    padding: 1vmin;
+    font-size: 2vmin;
+    border-radius: 0.1 solid grey;
+    color: grey;
+    gap: 1vmin;
+    border-radius: 4vmin;
+    /* display: flex;
+    flex-direction: row; */
+}
+
+button:hover {
+    color: white;
+    background-color: darkgoldenrod;
+}
