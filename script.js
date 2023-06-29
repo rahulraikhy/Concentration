@@ -71,7 +71,7 @@ const matrixGenerator = (cardValues, size = 4) => {
     for (let i = 0; i < size * size; i++) {
         gameContainer.innerHTML += `
         <div class="card-container" data-card-value="${cardValues[i].name}">
-            <div class="card-before">?</div>
+            <div id="${i}" class="card-before">?</div>
             <div class="card-after">
             <img src="${imagesPath}${cardValues[i].image}" class="image"/></div>
         </div>
@@ -82,10 +82,12 @@ const matrixGenerator = (cardValues, size = 4) => {
 
     cards = document.querySelectorAll(".card-container");
     cards.forEach((card) => {
-        card.addEventListener("click", () => {
+        card.addEventListener("click", (evt) => {
+            if (firstCard && secondCard) return
             if (!card.classList.contains("matched")) {
                 card.classList.add("flipped");
-                if (!firstCard) {
+                console.log(firstCard.id, evt.target)
+                if (!firstCard || firstCard.id === evt.target.id) {
                     firstCard = card;
                     firstCardValue = card.getAttribute("data-card-value");
                 } else {
@@ -105,12 +107,12 @@ const matrixGenerator = (cardValues, size = 4) => {
                         }
                     } else {
                         let [tempFirst, tempSecond] = [firstCard, secondCard];
-                        firstCard = false;
-                        secondCard = false;
                         let delay = setTimeout(() => {
                             tempFirst.classList.remove("flipped");
                             tempSecond.classList.remove("flipped");
-                        }, 900);
+                            firstCard = false;
+                            secondCard = false;
+                        }, 1000 * 2);
                     }
                 }
             }
