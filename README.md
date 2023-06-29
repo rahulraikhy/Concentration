@@ -24,7 +24,7 @@ The first statement checks if the first card and second card match, then return 
                     firstCardValue = card.getAttribute("data-card-value");
 ```
 
-The next else statement checks if the first card and the second card have the same value, then have them as matched, run the moves Counter function and one to the moves total, and one to the win counter, once the win count hits 8 (16 cards but divided by 2 as they are in matching pairs), stop the game and run the win message.
+The next else statement checks if the first card and the second card have the same value, then have them as matched, run the moves Counter function and one to the moves total, and one to the win counter, once the win count hits 8 (16 cards but divided by 2 as they are in matching pairs), stop the game and run the win message. If the win counter hasn't hit 8 yet, return both first and second card variables to false.
 
 ```
                 } else {
@@ -43,6 +43,8 @@ The next else statement checks if the first card and the second card have the sa
                             stopGame();
                         }
 ```
+
+
 
 ### Pseudocode Screenshot
 <img width="867" alt="Screenshot 2023-06-29 at 22 28 14" src="https://github.com/rahulraikhy/Concentration/assets/121837375/3d210807-3ca7-4cf3-a066-7bc122867b77">
