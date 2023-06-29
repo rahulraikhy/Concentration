@@ -57,6 +57,37 @@ The final else statement initiates the timeout function, if two cards are flippe
                         }, 1000 * 2);
 ```
 
+Bugs:
+
+This allowed for 2 bugs:-
+
+1) Double click on a single image to match itself (resolved)
+2) Clicking rapidly allowed for more than two clicks to be registered, thus breaking the game logic by turning over more than two cards in one turn (resolved)
+
+Resolution 1)
+
+```
+ card.addEventListener("click", (evt) => {
+...
+                if (!firstCard || firstCard.id === evt.target.id) {
+                    firstCard = card;
+```
+
+Resolution 2)
+
+```
+                            tempFirst.classList.remove("flipped");
+                            tempSecond.classList.remove("flipped");
+                            firstCard = false;
+                            secondCard = false;
+```
+
+Guard measure inserted to say if first card and second match, no need to run the rest of the function and continue gameplay.
+
+```
+   if (firstCard && secondCard) return
+```
+
 ### Pseudocode Screenshot
 <img width="867" alt="Screenshot 2023-06-29 at 22 28 14" src="https://github.com/rahulraikhy/Concentration/assets/121837375/3d210807-3ca7-4cf3-a066-7bc122867b77">
 
