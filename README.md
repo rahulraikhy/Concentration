@@ -24,6 +24,26 @@ The first statement checks if the first card and second card match, then return 
                     firstCardValue = card.getAttribute("data-card-value");
 ```
 
+The next else statement checks if the first card and the second card have the same value, then have them as matched, run the moves Counter function and one to the moves total, and one to the win counter, once the win count hits 8 (16 cards but divided by 2 as they are in matching pairs), stop the game and run the win message.
+
+```
+                } else {
+                    movesCounter();
+                    secondCard = card;
+                    let secondCardValue = card.getAttribute("data-card-value");
+                    if (firstCardValue === secondCardValue) {
+                        firstCard.classList.add("matched");
+                        secondCard.classList.add("matched");
+                        firstCard = false;
+                        secondCard = false;
+                        winCount += 1;
+                        if (winCount === Math.floor(cardValues.length / 2)) {
+                            result.innerHTML = `<h2>You Won</h2>
+                        <h4>Moves: ${movesCount}</h4>`;
+                            stopGame();
+                        }
+```
+
 ### Pseudocode Screenshot
 <img width="867" alt="Screenshot 2023-06-29 at 22 28 14" src="https://github.com/rahulraikhy/Concentration/assets/121837375/3d210807-3ca7-4cf3-a066-7bc122867b77">
 
