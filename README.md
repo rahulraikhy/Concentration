@@ -44,7 +44,18 @@ The next else statement checks if the first card and the second card have the sa
                         }
 ```
 
+The final else statement initiates the timeout function, if two cards are flipped, allow two seconds to see both cards before flipping them back over.
 
+```
+                    } else {
+                        let [tempFirst, tempSecond] = [firstCard, secondCard];
+                        let delay = setTimeout(() => {
+                            tempFirst.classList.remove("flipped");
+                            tempSecond.classList.remove("flipped");
+                            firstCard = false;
+                            secondCard = false;
+                        }, 1000 * 2);
+```
 
 ### Pseudocode Screenshot
 <img width="867" alt="Screenshot 2023-06-29 at 22 28 14" src="https://github.com/rahulraikhy/Concentration/assets/121837375/3d210807-3ca7-4cf3-a066-7bc122867b77">
